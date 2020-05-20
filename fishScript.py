@@ -44,7 +44,7 @@ import os
 if platform.startswith('win32') or platform.startswith('cygwin'):
     libdir = getenv('appdata') + "\\fishScript\\wrapper\\"
 
-path = [getcwd() + normpath('/'), getcwd() + normpath('/wrapper')]
+path = [getcwd() + normpath('/'), libdir]
 
 def delPartOfString(script, index=0):
     output = ''
@@ -81,9 +81,9 @@ def findLines(script='', char=';', rep='\n'):
             output = output + script[p]
     return output
 
-def subVariables(script=[]):
+def subVariables(script=[], vsym='$'):
     for p in range(0, len(script)):
-        if script[p].startswith('$'):
+        if script[p].startswith(vsym):
             if not script[p] in v_defs:
                 try:
                     script[p] = '"%s"' % _varmap[delPartOfString(script[p])]
@@ -139,7 +139,7 @@ def fishScriptLine(script, args=()):
             else:
                 sl = sl + ' ' + kw
             pass
-        exec(sl)
+        exec(subVariables(sl))
         pass
     elif script[0] == '$s' or script[0] == 'string':
         sl = ''
@@ -160,18 +160,37 @@ def fishScriptLine(script, args=()):
         except IndexError:
             print('Syntax Error: invalid syntax for command $s')
         pass
+    elif script[0] == '$p' or script[0] == '$@':
+        sl = ''
+        for kw in script[2:len(script)]:
+            if not sl == '':
+                sl = sl + ' ' + kw
+            else:
+                sl = kw
+            pass
+        try:
+            if not script[2].startswith('$'):
+                _varmap[script[1]] = exec(sl)
+            else:
+                try:
+                    _varmap[script[1]] = _varmap[delPartOfString(script[2])]
+                except KeyError:
+                    print("Name Error: Variable '%s' is not defined." % script[1])
+        except IndexError:
+            print('Syntax Error: invalid syntax for command $p')
+        pass
     elif script[0] == 'include':
-		sl = ''
+        sl = ''
         for location in path:
-            if os.path.exists(location + script[1]):
-                file = open(location + script[1])
+            if os.path.exists(location + script[1] + '.fs'):
+                file = open(location + script[1] + '.fs')
                 sl = file.read()
                 file.close()
                 break
                 pass
             pass
         if '' == sl:
-            print("File Error: File %s couldn't be found." % path[0] + script[1])
+            print("File Error: File %s%s couldn't be found." % (path[0], script[1] + '.fs'))
         else:
             fishScript(sl)
         pass
@@ -225,13 +244,23 @@ def fishScriptLine(script, args=()):
     elif script[0] == '$m' or script[0] == 'function' or script[0] == 'method':
         _varname = script[1]
         del script[0:2]
+        if not 'does' in script:
+            print("Your script does not contain the 'does' keyword. Use it to separate the parameters from the script.")
+            return
+        parameters = subVariables(replaceWord(script, word='does'))
+        _code = replaceWord(script, start='does')
         code = ''
-        for kw in script:
+        for kw in _code:
             if code == '':
                 code = kw
             else:
                 code = code + ' ' + kw
-        _varmap[_varname] = 'fishScript("exe %s")' % code
+        ye = ''
+        _varmap[_varname] = {
+            "parameters" : parameters,
+            "code" : code,
+            "type" : "method"
+        } #'fishScript("exe %s")' % code
         _vararray.append(_varname)
     elif script[0] == 'exe':
         del script[0]
@@ -258,12 +287,25 @@ def fishScriptLine(script, args=()):
             else:
                 ye = ye + ' ' + kw
         eval(ye + 'fishScript("exe %s")' % code)
-    elif script[0] == '//' or script[0] == '#':
+    elif script[0] == '//':
         pass
     elif script[0] in _vararray:
-        exec(_varmap[script[0]])
+        funcname = script[0]
+        del script[0]
+        paras = _varmap[funcname]["parameters"]
+        for p in range(0, len(script)):
+            try:
+                paras[p] = script[p]
+            except IndexError:
+                print("Command Error: Call to function was missing parameters (%s required, %s given)" % (len(paras), len(script)))
+        for p in range(0, len(paras)):
+            try:
+                fishScript('-s %s %s' % (paras[p], script[p]))
+            except IndexError:
+                print("Command Error: Call to function was missing parameters (%s required, %s given)" % (len(paras), len(script)))
+        fishScript("exe %s" % subVariables(_varmap[funcname]["code"], vsym='-'))
     else:
-        print("CommandError: Unknown command: %s" % script[0])
+        print("Command Error: Unknown command: %s" % script[0])
     pass
 
 fishScript()
