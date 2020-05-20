@@ -34,13 +34,17 @@ def parseRawInt(string=''):
         pass
     return int(float(output))
 
-# Everything below this line is an experiment I'm working on
+# Everything below this line is an experiment I'm working on: https://github.com/Kettle3D/fishScript
 
 v_defs = ['$n', '$s', '$f', '$i', '$a', '$t', '$d', '$b', '$x', '$o', '$c', '$l', '$m']
-from os import getenv
+from os import getenv, getcwd
+from os.path import normpath
 from sys import platform
+import os
 if platform.startswith('win32') or platform.startswith('cygwin'):
     libdir = getenv('appdata') + "\\fishScript\\wrapper\\"
+
+path = [getcwd() + normpath('/'), getcwd() + normpath('/wrapper')]
 
 def delPartOfString(script, index=0):
     output = ''
@@ -156,6 +160,21 @@ def fishScriptLine(script, args=()):
         except IndexError:
             print('Syntax Error: invalid syntax for command $s')
         pass
+    elif script[0] == 'include':
+		sl = ''
+        for location in path:
+            if os.path.exists(location + script[1]):
+                file = open(location + script[1])
+                sl = file.read()
+                file.close()
+                break
+                pass
+            pass
+        if '' == sl:
+            print("File Error: File %s couldn't be found." % path[0] + script[1])
+        else:
+            fishScript(sl)
+        pass
     elif script[0] == '$i' or script[0] == 'int':
         _varname = script[1]
         del script[0:2]
@@ -222,7 +241,7 @@ def fishScriptLine(script, args=()):
                 sl = kw
             else:
                 sl = sl + ' ' + kw
-        fishScript(findLines(sl))
+        fishScript(subVariables(findLines(sl)))
     elif script[0] == 'if':
         con = subVariables(replaceWord(script))
         _code = replaceWord(script, start='then')
@@ -248,3 +267,4 @@ def fishScriptLine(script, args=()):
     pass
 
 fishScript()
+
