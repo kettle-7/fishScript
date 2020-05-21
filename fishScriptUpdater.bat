@@ -1,7 +1,7 @@
 REM Download Python
 REM powershell "Invoke-WebRequest https://www.python.org/ftp/python/3.8.3/python-3.8.3.exe -o %userprofile%\Downloads\python_installer.exe"
 REM cd %userprofile%\Downloads
-EEM python_installer.exe
+REM python_installer.exe
 
 REM Make all the folders and things
 cd %appdata%
