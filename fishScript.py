@@ -40,7 +40,9 @@ v_defs = ['$n', '$s', '$f', '$i', '$a', '$t', '$d', '$b', '$x', '$o', '$c', '$l'
 from os import getenv, getcwd
 from os.path import normpath
 from sys import platform
+import copy
 import os
+
 if platform.startswith('win32') or platform.startswith('cygwin'):
     libdir = getenv('appdata') + "\\fishScript\\wrapper\\"
 
@@ -186,6 +188,25 @@ def fishScriptLine(script, args=()):
         except IndexError:
             print('Syntax Error: invalid syntax for command $s')
         pass
+    elif script[0] == '-s' or script[0] == 'Pstring':
+        sl = ''
+        for kw in script[2:len(script)]:
+            if not sl == '':
+                sl = sl + ' ' + kw
+            else:
+                sl = kw
+            pass
+        try:
+            if not script[2].startswith('-'):
+                _varmap[script[1]] = sl
+            else:
+                try:
+                    _varmap[script[1]] = _varmap[delPartOfString(script[2])]
+                except KeyError:
+                    print("Name Error: Variable '%s' is not defined." % script[1])
+        except IndexError:
+            print('Syntax Error: invalid syntax for command -s')
+        pass
     elif script[0] == '$p' or script[0] == '$@':
         sl = ''
         for kw in script[2:len(script)]:
@@ -267,7 +288,7 @@ def fishScriptLine(script, args=()):
         del script[1]
         _varmap[_varname] = None
         pass
-    elif script[0] == '$m' or script[0] == 'function' or script[0] == 'method':
+    elif script[0] == '$m' or script[0] == 'function':
         _varname = script[1]
         del script[0:2]
         if not 'does' in script:
@@ -286,6 +307,28 @@ def fishScriptLine(script, args=()):
             "parameters" : parameters,
             "code" : code,
             "type" : "method"
+        } #'fishScript("exe %s")' % code
+        _vararray.append(_varname)
+    elif  script[0] == 'method':
+        _varname = script[1]
+        del script[0:2]
+        if not 'does' in script:
+            print("Your script does not contain the 'does' keyword. Use it to separate the parameters from the script.")
+            return
+        parameters = subVariables(replaceWord(script, word='does'))
+        del parameters[0]
+        _code = replaceWord(script, start='does')
+        code = ''
+        for kw in _code:
+            if code == '':
+                code = kw
+            else:
+                code = code + ' ' + kw
+        ye = ''
+        _varmap[_varname] = {
+            "parameters" : parameters,
+            "code" : code,
+            "type" : "raw"
         } #'fishScript("exe %s")' % code
         _vararray.append(_varname)
     elif script[0] == 'exe':
@@ -324,12 +367,17 @@ def fishScriptLine(script, args=()):
                 paras[p] = script[p]
             except IndexError:
                 print("Command Error: Call to function was missing parameters (%s required, %s given)" % (len(paras), len(script)))
+                return
         for p in range(0, len(paras)):
             try:
                 fishScript('-s %s %s' % (paras[p], script[p]))
             except IndexError:
                 print("Command Error: Call to function was missing parameters (%s required, %s given)" % (len(paras), len(script)))
-        lins = "exe %s" % _varmap[funcname]["code"]
+                return
+        if _varmap[funcname]["type"] == "method":
+            lins = "exe %s" % _varmap[funcname]["code"]
+        else:
+            lins = _varmap[funcname]["code"]
         lin = subVariables(lins.split())
         li = addListItems(lin)
         fishScript(li)
