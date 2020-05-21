@@ -83,13 +83,36 @@ def findLines(script='', char=';', rep='\n'):
 
 def subVariables(script=[], vsym='$'):
     for p in range(0, len(script)):
-        if script[p].startswith(vsym):
-            if not script[p] in v_defs:
-                try:
-                    script[p] = '"%s"' % _varmap[delPartOfString(script[p])]
-                except KeyError:
-                    print("Name Error: Variable '%s' is not defined." % script[p])
+        try:
+            if script[p].startswith(vsym):
+                if not script[p] in v_defs:
+                    try:
+                        script[p] = '"%s"' % _varmap[delPartOfString(script[p])]
+                    except KeyError:
+                        print("Name Error: Variable '%s' is not defined." % script[p])
+        except AttributeError:
+            for pl in range(0, len(script[p])):
+                if script[p][pl].startswith(vsym):
+                    if not script[p][pl] in v_defs:
+                        try:
+                            script[p][pl] = '%s' % _varmap[delPartOfString(script[p][pl])]
+                        except KeyError:
+                            print("Name Error: Variable '%s' is not defined." % script[p][pl])
     return script
+
+def addListItems(script=[]):
+    sl = ''
+    try:
+        for p in range(0, len(script)):
+            if sl == '':
+                sl = script[p]
+            else:
+                sl = sl + ' ' + script[p]
+    except TypeError:
+        sl = []
+        for p in range(0, len(script)):
+            sl = sl + script[p]
+    return sl
 
 _varmap = {}
 _vararray = []
@@ -116,6 +139,9 @@ def fishScriptLine(script, args=()):
         return
     if script[0] == 'log':
         sl = ''
+        if len(script) == 1:
+            print("Command Error: You need to provide parameters for this function.")
+            return
         for kw in script[1:len(script)]:
             if sl == '':
                 sl = kw
@@ -303,10 +329,12 @@ def fishScriptLine(script, args=()):
                 fishScript('-s %s %s' % (paras[p], script[p]))
             except IndexError:
                 print("Command Error: Call to function was missing parameters (%s required, %s given)" % (len(paras), len(script)))
-        fishScript("exe %s" % subVariables(_varmap[funcname]["code"], vsym='-'))
+        lins = "exe %s" % _varmap[funcname]["code"]
+        lin = subVariables(lins.split())
+        li = addListItems(lin)
+        fishScript(li)
     else:
         print("Command Error: Unknown command: %s" % script[0])
     pass
 
 fishScript()
-
