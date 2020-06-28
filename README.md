@@ -1,22 +1,31 @@
-# How to use fishScript
+How to use fishScript
+===
 
-## A hello world tutorial with fishScript
-Here is how to make fishScript run a hello world program.
-1) Start up the shell. It should be in a folder named fishScript in your Start Menu.
-2) Type the following into the shell and press ENTER: `log Hello World`.
-3) Congratulations! You've just made your first fishScript program!
+A Hello World tutorial in fishScript
+---
 
-## A closer look at fishScript syntax
-Here is what your code just did:
+In order to start programming with fishScript, you'll need a text editor. I'm using VS Code, but Notepad will be fine for this.  
+Create a new file called `HelloWorld.fS`, and open it in your text editor.  
+The next thing you'll need to do is write the program. Type the following text into the file:  
+```
+log Hello, World!
+```
 
-`log` is a **command**. That a piece of code, like a function or a piece of code.  
-Everything that follows gets printed to the shell.  
-A command can have *parameters*, which are things that the code uses to know, in the case of `log`, what to write to the shell.  
-`log` only takes one parameter. This means that it takes the rest of the line as it's parameter.
+Now you need to run it. Download the fishScript compiler from this GitHub repository.  
+Then, once you've done that, right-click on `HelloWorld.fS`, click **Open With... > Choose another app > Look for another app on this PC.** and browse to where you downloaded the compiler. 
 
-## How to use variables with fishScript
-Now you know how to print a simple string, it's time to do more with fishScript.
+Ta-daa! You should see a black window with the following text:
+```
+|\  __|\___     ==========================================================
+| \/  _  o \    fishScript Compiler v0.1
+| /\  \  ___|   For more info visit https://kettle3d.github.io/fishScript/
+|/  \______/    ==========================================================
 
-*Variables* are like tiny containers that can hold information, such as letters and numbers. Now we're going to create your first variable.  
-Open the shell and type the following: `string hello Hello World  
-log $hello`. You'll notice that three greater-that symbols (`>>> `) will appear in the shell. This is fishScript asking you what you want it to do. You'll see the words `Hello World` printed to the shell.
+Hello, World!
+Process ended with exit code 0.
+
+Press any key to close this window...
+```
+
+This is what your program does. The `log` command is used to print text to the screen, sort of like `Console.WriteLine()` in Basic.  
+As a matter of fact, that's how I made the log command.
