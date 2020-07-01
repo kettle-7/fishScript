@@ -11,7 +11,7 @@ The next thing you'll need to do is write the program. Type the following text i
 log Hello, World!
 ```
 
-Now you need to run it. Download the fishScript compiler from [here](https://github.com/Kettle3D/fishScript/releases/download/v0.1.1/FS.exe).  
+Now you need to run it. Download the fishScript compiler from [here](https://github.com/Kettle3D/fishScript/releases/download/v0.1.2/FS.exe).  
 Then, once you've done that, right-click on `HelloWorld.fS`, click **Open With... > Choose another app > Look for another app on this PC.** and browse to where you downloaded the compiler. 
 
 Ta-daa! You should see a black window with the following text:
