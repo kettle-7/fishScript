@@ -24,7 +24,7 @@
             <Keywords name="Folders in comment, open"></Keywords>
             <Keywords name="Folders in comment, middle"></Keywords>
             <Keywords name="Folders in comment, close"></Keywords>
-            <Keywords name="Keywords1">help input as log set to var do make be sub swim away exit wait debug add take from mult div by multiply divide</Keywords>
+            <Keywords name="Keywords1">help input if true false endif as log set to var do make be sub swim away exit wait debug add take from mult div by multiply divide</Keywords>
             <Keywords name="Keywords2">fish friendly</Keywords>
             <Keywords name="Keywords3"></Keywords>
             <Keywords name="Keywords4"></Keywords>
