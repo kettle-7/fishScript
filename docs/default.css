@@ -23,7 +23,7 @@ h1 {
 }
 
 h2 {
-	font-family: Monospace, Unicode, 'Fixed Width', 'Lucida Console', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-family: monospace;
 }
 
 header {
@@ -45,6 +45,7 @@ footer {
 .headertext {
 	color: #ffffff;
 	text-decoration-line: none;
+	font-family: Calibri, Arial, Helvetica, sans-serif;
 }
 
 #mainContent {

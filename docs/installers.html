@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>fishScript</title>
+		<link rel="icon" href="https://github.com/Kettle3D/fishScript/raw/master/docs/favicon.ico" />
+		<link rel="stylesheet" href="default.css" />
+	</head>
+	<body style="margin: 0px; overflow: hidden;">
+		<header>
+			<h1 style="margin-left: 5px; display: inline;"><a href="./" class="headertext"><img src="favicon.ico" style="display: inline; width: 50px; height: 50px; vertical-align: middle;" />&nbsp;fishScript</a></h1>
+		</header>
+		<main style="margin: 5px;">
+			<div id="mainContent">
+                <!-- Put the document body here. -->
+                <h1>Using fishScript for installers</h1>
+                <p>
+                    One of fishScript's specialities is making simple installer scripts.<br>
+                    Here's a guide to help you when you're developing with fishScript.
+                </p>
+                <h1>The <span style="font-family: monospace;">download</span> command</h1>
+                <p>
+                    The <span style="font-family: monospace;">download</span> command is great for installers. Here's an example that uses the download command:
+                    <hr />
+                    <span style="font-family: monospace; font-weight: bold;">
+                        download kettle3d.github.io/fishScript/win.exe to C:\Program Files\fishScript\fS.exe
+                    </span>
+                    <hr />
+                </p><p>
+                    This would download fishScript onto the user's computer. However, you'd need to run this in administrator to get access to
+                    the Program Files folder, and it's sort of pointless seeing as the user needs fishScript to run it.
+                </p>
+            </div>
+        <script>
+            document.getElementById("mainContent").style.height = window.innerHeight - 100 + "px";
+        </script>
+    </main>
+    <footer />
+</body>
+</html>
