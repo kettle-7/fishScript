@@ -4,11 +4,12 @@
 		<link rel="icon" href="https://github.com/Kettle3D/fishScript/raw/master/docs/favicon.ico" />
 		<link rel="stylesheet" href="default.css" />
 	</head>
-	<body style="margin: 0px;">
+	<body style="margin: 0px; overflow: hidden;">
 		<header>
 			<h1 style="margin-left: 5px; display: inline;"><a href="./" class="headertext"><img src="favicon.ico" style="display: inline; width: 50px; height: 50px; vertical-align: middle;" />&nbsp;fishScript</a></h1>
 		</header>
 		<main style="margin: 5px;">
+			<div id="mainContent">
 			<!-- Put the document body here. -->
 			<h1>fishScript</h1>
 			<p>
@@ -17,12 +18,40 @@
 			</p><p>
 			This page contains info about fishScript, along with installation instructions and stuff like that.
 			</p>
+			<!--
 			<table>
 				<tr>
 					<th>Table of Contents</th>
 				</tr>
 				<tr><td><a></a></td></tr>
 			</table>
+			-->
+			<h1>Getting Started with fS</h1>
+			<p>
+				In order to start programming with fishScript, you'll need a text editor. I'm using VS Code, but Notepad will be fine for this.<br>
+				Create a new file called HelloWorld.fS, and open it in your text editor.<br />
+				The next thing you'll need to do is write the program. Type the following text into the file:<br>
+				<code>
+				log Hello, World!
+				</code><br>
+				Now you need to run it. Download the fishScript compiler from here.<br>
+				Then, once you've done that, right-click on HelloWorld.fS, click Open With... > Choose another app > Look for another app on this PC. and browse to where you downloaded the compiler.<br>
+<br>
+				Ta-daa! You should see a black window with the following text:<br>
+				<code>
+				|\  __|\___     ==========================================================<br>
+				| \/  _  o \    fishScript Compiler v0.1<br>
+				| /\  \  ___|   For more info visit https://kettle3d.github.io/fishScript/<br>
+				|/  \______/    ==========================================================<br>
+<br>
+				Hello, World!<br>
+				Process ended with exit code 0.<br>
+<br>
+				Press any key to close this window...<br>
+				</code>
+				This is what your program does. The log command is used to print text to the screen<br>
+			</p>
+			</div>
 		</main>
 		<footer></footer>
 	</body>
