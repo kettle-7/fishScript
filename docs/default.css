@@ -1,3 +1,28 @@
 p {
-	font-family: Calibri, Helvetica, sans-serif;
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+
+header {
+	fill: #008090;
+	background-color: #008090;
+	height: 50px;
+}
+
+footer {
+	fill: #008090;
+	background-color: #008090;
+	position: absolute;
+	height: 50px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+}
+
+.headertext {
+	color: #ffffff;
+	text-decoration-line: none;
 }
