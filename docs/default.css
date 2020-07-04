@@ -2,6 +2,10 @@ p {
 	font-family: 'Comic Sans', 'Comic Sans MS', Arial, Helvetica, sans-serif;
 }
 
+h4 {
+	font-family: 'Comic Sans', 'Comic Sans MS', Arial, Helvetica, sans-serif;
+}
+
 a {
 	font-family: 'Comic Sans', 'Comic Sans MS', Arial, Helvetica, sans-serif;
 }
@@ -16,6 +20,10 @@ td {
 
 h1 {
 	font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+
+h2 {
+	font-family: Monospace, Unicode, 'Fixed Width', 'Lucida Console', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 header {
