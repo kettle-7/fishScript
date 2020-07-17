@@ -153,6 +153,10 @@ Exit code 5: Your program found a command, variable, file or submodule that does
 Exit code 90: You put `swim away` or [`exit`](https://kettle3d.github.io/fishScript/#exit) at the bottom of your code and fishScript did exactly that.*  
 ***
 
+Using fishScript on other platforms
+---
+fishScript currently only has support for Windows. For this reason, I am posting (part of) the source code for fishScript. If you have a Visual Basic compiler for your platform, the source code is [here](https://github.com/Kettle3D/fishScript/blob/master/fS.vb). You'll need to reference [fishScript.dll](https://github.com/Kettle3D/fishScript/raw/master/fishScript.dll).
+
 Even more fishScript
 ---
 You can find more info about fishScript and all of it's commands at the [fishScript Website](https://kettle3d.github.io/fishScript/).
