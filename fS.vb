@@ -1,6 +1,7 @@
 Imports fishScript
 Imports System.Net
 Imports System.IO
+Imports System
 
 Module Program
     Sub Main(args As String())
@@ -55,7 +56,7 @@ fS
             End If
         Else
             Console.WriteLine(args.Length)
-            For Each arg In args
+            For Each arg As String In args
                 Console.WriteLine(arg)
             Next
         End If
