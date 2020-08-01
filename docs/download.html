@@ -13,11 +13,35 @@
 			<div id="mainContent">
 				<h1>Download fishScript</h1>
 				<p>
-					Your download should begin automatically. We think you're running <span id="os">Windows</span> on an <span id="processor">x86</span> processor.<br>
+					Your download should begin automatically. If it doesn't, click <a style="color: #00f; text-decoration-line: underline;" onclick="window.open('./files/' + OSName + '/' + ProcessorArchitecture + '/fishScript' + suffix, '_blank');">here</a>.<br>
+					We think you're running <span id="os">Windows</span> on an <span id="processor">x86</span> processor.<br>
 					If you're not, you can scroll down to find a download for your OS and processor.
 				</p>
 				
-				<h2></h2>
+				<h2>Other downloads:</h2>
+				<h3>Windows</h3>
+				<p>
+					<a href="./files/Windows/x86/fishScript.exe">Any CPU</a>
+				</p>
+				<h3>Ubuntu</h3>
+				<p>
+					<a href="./files/ubuntu/x86/fishScript">x86 (32-bit)</a>
+					<a href="./files/ubuntu/x64/fishScript">x64 (64-bit), AMD64 (64-bit)</a>
+					<a href="./files/ubuntu/arm/fishScript">ARM (32-bit)</a>
+					<a href="./files/ubuntu/arm64/fishScript">ARM (64-bit)</a>
+				</p>
+				<h3>Debian</h3>
+				<p>
+					<a href="./files/debian/x86/fishScript">x86 (32-bit)</a>
+					<a href="./files/debian/x64/fishScript">x64 (64-bit), AMD64 (64-bit)</a>
+					<a href="./files/debian/arm/fishScript">ARM (32-bit)</a>
+					<a href="./files/debian/arm64/fishScript">ARM (64-bit)</a>
+				</p>
+				<h3>Mac OS X</h3>
+				<p>
+					<a href="./files/osx/i386/fishScript">32-bit</a>
+					<a href="./files/osx/x64/fishScript">64-bit</a>
+				</p>
 			</div>
 		</main>
 		<script>
@@ -33,7 +57,7 @@
 			if (navigator.userAgent.indexOf("x86_64") != -1 || navigator.userAgent.indexOf("x64") != -1) {
 				ProcessorArchitecture = "x64";
 			}
-			window.open('./fishScript-' + OSName + '-' + ProcessorArchitecture + suffix, '_blank');
+			window.open('./files/' + OSName + '/' + ProcessorArchitecture + "/fishScript" + suffix, '_blank');
 			document.getElementById("os").innerHtml = OSName;
 			document.getElementById("processor").innerHtml = ProcessorArchitecture;
 		</script>
