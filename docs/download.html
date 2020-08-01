@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Download fishScript</title>
+	</head>
+	<body>
+		<header>
+			<h1 style="margin-left: 5px; display: inline;"><a href="./" class="headertext"><img src="favicon.ico" style="display: inline; width: 50px; height: 50px; vertical-align: middle;">&nbsp;fishScript</a>&nbsp;&nbsp;&nbsp;<a href="./download">Download</a></h1>
+		</header>
+		<main style="margin:5px;">
+			<div id="mainContent">
+				<h1>Download fishScript</h1>
+				<p>
+					Your download should begin automatically. We think you're running <span id="os">Windows</span> on an <span id="processor">x86</span> processor.<br>
+					If you're not, you can scroll down to find a download for your OS and processor.
+				</p>
+				
+				<h2></h2>
+			</div>
+		</main>
+		<script>
+			var OSName="Windows";
+			var suffix = "";
+			if (navigator.appVersion.indexOf("Win")!=-1) { OSName="Windows"; suffix = ".exe"; }
+			if (navigator.appVersion.indexOf("Mac")!=-1) { OSName="macOS"; }
+			if (navigator.appVersion.indexOf("X11")!=-1) { OSName="UNIX"; }
+			if (navigator.appVersion.indexOf("Linux")!=-1) { OSName="Linux"; }
+			var ProcessorArchitecture = "x86";
+			if (navigator.userAgent.indexOf("x86_64") != -1) {
+				ProcessorArchitecture = "x64";
+			}
+			window.open('./fishScript-' + OSName + '-' + ProcessorArchitecture + suffix, '_blank');
+			document.getElementById("os").innerHtml = OSName;
+			document.getElementById("processor").innerHtml = ProcessorArchitecture;
+		</script>
+		<footer />
+	</body>
+</html>
