@@ -57,7 +57,8 @@
 			if (navigator.userAgent.indexOf("x86_64") != -1 || navigator.userAgent.indexOf("x64") != -1) {
 				ProcessorArchitecture = "x64";
 			}
-			window.open('./files/' + OSName + '/' + ProcessorArchitecture + "/fishScript" + suffix, '_blank');
+			//window.open('./files/' + OSName + '/' + ProcessorArchitecture + "/fishScript" + suffix, '_blank');
+			window.open("fishScript.zip")
 			document.getElementById("os").innerHtml = OSName;
 			document.getElementById("processor").innerHtml = ProcessorArchitecture;
 		</script>
