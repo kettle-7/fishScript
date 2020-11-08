@@ -1,0 +1,41 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fS-Compiler", "fS-Compiler.csproj", "{B4ACBFC2-A480-46A3-A2AB-F55D2CFC88EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fishBytes", "..\..\..\STAB\STAB.NET\fishBytes.csproj", "{8CDB3BF8-9248-4CE7-A522-6DEAE766C61F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4ACBFC2-A480-46A3-A2AB-F55D2CFC88EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4ACBFC2-A480-46A3-A2AB-F55D2CFC88EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4ACBFC2-A480-46A3-A2AB-F55D2CFC88EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4ACBFC2-A480-46A3-A2AB-F55D2CFC88EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CDB3BF8-9248-4CE7-A522-6DEAE766C61F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDB3BF8-9248-4CE7-A522-6DEAE766C61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDB3BF8-9248-4CE7-A522-6DEAE766C61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDB3BF8-9248-4CE7-A522-6DEAE766C61F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+		$0.StandardHeader = $4
+		$4.Text = @/*\nCreated for the update that introduces Object-oriented features.\n*/
+		$0.TextStylePolicy = $5
+		$5.FileWidth = 80
+		$5.TabsToSpaces = True
+		$5.scope = text/plain
+		description = A suite of programs for fishScript and fishBytes programming.
+		outputpath = bin
+	EndGlobalSection
+EndGlobal

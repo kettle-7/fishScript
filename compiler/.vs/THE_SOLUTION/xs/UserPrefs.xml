@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{B4ACBFC2-A480-46A3-A2AB-F55D2CFC88EE}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../STAB/STAB.NET/fishBytes.cs">
+    <Files>
+      <File FileName="Program.cs" Line="326" Column="33" />
+      <File FileName="../../../../../benk/Programming/STAB/STAB.NET/fishBytes.cs" Line="24" Column="5" />
+      <File FileName="../../../../../benk/Programming/fishScript/fishScript-.NET-Standard/fishScript-crossplatform/Core.cs" Line="261" Column="14" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.fishBytes PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.fS-Compiler PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

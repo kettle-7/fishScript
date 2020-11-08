@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/kettle/.dotnet/store/|arch|/|tfm|",
+      "/home/kettle/.nuget/packages"
+    ]
+  }
+}

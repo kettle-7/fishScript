@@ -1,0 +1,15 @@
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/bin/Debug/netcoreapp3.1/Program.cs
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/bin/Debug/netcoreapp3.1/fsc
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/bin/Debug/netcoreapp3.1/fS-Compiler.xml
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/bin/Debug/netcoreapp3.1/fsc.deps.json
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/bin/Debug/netcoreapp3.1/fsc.runtimeconfig.json
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/bin/Debug/netcoreapp3.1/fsc.runtimeconfig.dev.json
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/bin/Debug/netcoreapp3.1/fsc.dll
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/bin/Debug/netcoreapp3.1/fsc.pdb
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/obj/Debug/netcoreapp3.1/fS-Compiler.AssemblyInfoInputs.cache
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/obj/Debug/netcoreapp3.1/fS-Compiler.AssemblyInfo.cs
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/obj/Debug/netcoreapp3.1/fS-Compiler.csproj.CoreCompileInputs.cache
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/obj/Debug/netcoreapp3.1/fsc.dll
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/obj/Debug/netcoreapp3.1/fsc.pdb
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/obj/Debug/netcoreapp3.1/fS-Compiler.genruntimeconfig.cache
+/home/kettle/Programming/fishScript/fishScript-.NET-Standard/fS-Compiler/obj/Debug/netcoreapp3.1/fS-Compiler.csprojAssemblyReference.cache

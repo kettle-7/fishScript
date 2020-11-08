@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon>..\..\..\..\..\benk\Programming\fishScript\fishScript-.NET-Standard\FS\fishScript.ico</ApplicationIcon>
+    <CodePage>65001</CodePage>
+    <RootNamespace>fS_Compiler</RootNamespace>
+    <AssemblyName>fsc</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <WarningLevel></WarningLevel>
+    <DocumentationFile>bin\Debug\netcoreapp3.1\fS-Compiler.xml</DocumentationFile>
+    <WarningLevel></WarningLevel>
+    <NoStdLib>false</NoStdLib>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DocumentationFile></DocumentationFile>
+    <NoStdLib>false</NoStdLib>
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Program.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+</Project>

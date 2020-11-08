@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>fsc</name>
+    </assembly>
+    <members>
+        <member name="T:fS_Compiler.Compiler">
+            <summary>
+            A class for handling the compilation of code
+            </summary>
+        </member>
+        <member name="F:fS_Compiler.Compiler.VariableNames">
+            <summary>
+            The integers that represent the names of all the variables
+            </summary>
+        </member>
+        <member name="F:fS_Compiler.Compiler.LastVariableName">
+            <summary>
+            The last variable name used.
+            </summary>
+        </member>
+        <member name="M:fS_Compiler.Compiler.Compile(System.String[],System.String)">
+            <summary>
+            Compile the specified lines and write to the output file.
+            </summary>
+            <returns>The exit code.</returns>
+            <param name="lines">The lines of fishScript code to compile.</param>
+            <param name="output">The file to write output data to.</param>
+        </member>
+    </members>
+</doc>
